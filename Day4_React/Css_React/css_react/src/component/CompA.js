@@ -1,10 +1,10 @@
 import React from "react";
 // import "./CompA.css";
-function CompA(props) {
+function CompA({css}) {
     console.log(props);
   return (
     <div>
-      <button style={props.css}>Click me</button>
+      <button style={css}>Click me</button>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo,
         pariatur.
@@ -20,3 +20,4 @@ function CompA(props) {
 }
 
 export default CompA;
+

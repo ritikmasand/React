@@ -11,3 +11,6 @@
 - This is because , index.css refers to the code at a global level .
 
 **Note : Do make sure that all the css properties that you are trying to give should follow camelCasing**
+
+
+// hooks , usestate , lifecycle , useeffect

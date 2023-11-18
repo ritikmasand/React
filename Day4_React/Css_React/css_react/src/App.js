@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <CompA css={css} />
+        <CompA css={css}  css2={css2}/>
         <CompB fn={fn} />
       </header>
     </div>
