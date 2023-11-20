@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 // import { useTime } from "react-timer-hook";
 import { useState } from "react";
+import ToggleComp from "./components/ToggleComp";
 function App() {
   // const time = useTime({ format: "12-hour" });
   let [count, setCount] = useState(0);
@@ -22,18 +23,15 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        {/* <p>
+      {/* <p>
           Time : {time.hours} : {time.minutes} : {time.seconds} {time.ampm}
         </p> */}
-        <button onClick={inc}>Increment</button>
-        <button onClick={dec}>decrememt</button>
-        <h3>{count}</h3>
-      </header>
+      <button onClick={inc}>Increment</button>
+      <button onClick={dec}>decrememt</button>
+      <h3>{count}</h3>
+      <ToggleComp />
     </div>
   );
 }
 
 export default App;
-
-

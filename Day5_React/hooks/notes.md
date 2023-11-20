@@ -9,7 +9,7 @@
 - Because hooks are functions , every hook has to be imported , if we have to use it .
 - to identify , most developers write the hook starting with `use`
 - this is not mandotary , but a general practice
-- Hooks are the abiliyy to re-render a component .
+- Hooks have the ability to re-render a component .
 
 - Example : react-timer-hook
 
@@ -24,7 +24,7 @@
 
 ## State
 
-- If I want react to track any variable , i need to create a state hook.
+- If I want react to track any variable , we need to create a state hook.
 - React will track variables for changes
 - If there is any change , the component will be re-rendered .
 - UseState is the name of that hook which we will call to create trackable variables .
