@@ -11,3 +11,24 @@ function App() {
 }
 
 export default App;
+
+
+// event loop
+// useref
+// router
+// project -2 
+
+// 
+// path params
+// query params
+
+// local storage
+
+// hoc
+// foc
+
+// pure functions
+
+// pure components
+
+// context api
