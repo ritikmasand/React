@@ -44,3 +44,6 @@
 - preventDefault will prevent the default action from happening for that particular event .
 - This is used when we customize the functionality/logic and we do not want the default logic to happen
 - This is part of vanilla JS .
+
+
+
