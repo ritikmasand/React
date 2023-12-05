@@ -4,6 +4,8 @@ import Search from "./component/Search";
 import { useEffect, useState } from "react";
 import { github } from "./utils";
 import FollowerList from "./component/FollowerList";
+import FollowingList from "./component/FollowingList";
+import RepoList from "./component/RepoList";
 function App() {
   const [detail, setDetail] = useState({});
   const [repoList, setRepoList] = useState([]);
@@ -43,7 +45,6 @@ function App() {
   }, [username]);
   useEffect(() => {
     if (username === "") return;
-
     (async () => {
       const response = await github.get(`/${username}/followers`);
       setFollowerList(response.data);
@@ -52,7 +53,6 @@ function App() {
   }, [username]);
   useEffect(() => {
     if (username === "") return;
-
     (async () => {
       const response = await github.get(`/${username}/following`);
       setFollowingList(response.data);
@@ -62,7 +62,9 @@ function App() {
   return (
     <div className="App">
       <Search searchedUsername={searchedUsername} />
-      <FollowerList data = {followerList} />
+      <FollowerList data={followerList} />
+      <FollowingList data={followingList} />
+      <RepoList data={repoList}/>
     </div>
   );
 }
