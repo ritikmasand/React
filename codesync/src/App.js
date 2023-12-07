@@ -6,6 +6,7 @@ import { github } from "./utils";
 import FollowerList from "./component/FollowerList";
 import FollowingList from "./component/FollowingList";
 import RepoList from "./component/RepoList";
+import Detail from "./component/Detail";
 function App() {
   const [detail, setDetail] = useState({});
   const [repoList, setRepoList] = useState([]);
@@ -16,23 +17,34 @@ function App() {
     setUsername(keyword);
   };
 
- // 1 -> detail of username
- // 2-> repos 
- // 3-> followers
- // 4-> following
-
+  // 1 -> detail of username
+  // 2-> repos
+  // 3-> followers
+  // 4-> following
 
   useEffect(() => {
     if (username === "") {
       return;
     }
-    (async () => {   
+  
+    (async () => {
       const response = await github.get(`/${username}`);
       setDetail(response.data);
       console.log(detail);
-      
+
+    })(); // IIFE
+  }, [username]);
+
+  useEffect(() => {
+    if (username === "") {
+      return;
+    }
+    (async () => {
+      const response = await github.get(`/${username}`);
+      setDetail(response.data);
+      console.log(detail);
     })();
-  } , [username]);
+  }, [username]);
   useEffect(() => {
     if (username === "") {
       return;
@@ -61,10 +73,11 @@ function App() {
   }, [username]);
   return (
     <div className="App">
+      <Detail data={detail}/>
       <Search searchedUsername={searchedUsername} />
       <FollowerList data={followerList} />
       <FollowingList data={followingList} />
-      <RepoList data={repoList}/>
+      <RepoList data={repoList} />
     </div>
   );
 }
