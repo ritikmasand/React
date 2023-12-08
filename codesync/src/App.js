@@ -13,6 +13,7 @@ function App() {
   const [followerList, setFollowerList] = useState([]);
   const [followingList, setFollowingList] = useState([]);
   const [username, setUsername] = useState("");
+  const [visibleComponent, setVisibleComponent] = useState(2);
   const searchedUsername = (keyword) => {
     setUsername(keyword);
   };
@@ -26,12 +27,11 @@ function App() {
     if (username === "") {
       return;
     }
-  
+
     (async () => {
       const response = await github.get(`/${username}`);
       setDetail(response.data);
       console.log(detail);
-
     })(); // IIFE
   }, [username]);
 
@@ -71,13 +71,37 @@ function App() {
       console.log(followingList);
     })();
   }, [username]);
+
+  const loadMoreData = async () => {
+    if (visibleComponent === 1) {
+      const currentPages = Math.ceil(followerList.length / 30);
+      const nextpage = currentPages + 1;
+      const response = await github.get(`/${username}/followers?page=${nextpage}`);
+      const list = response.data;
+      // console.log(list);
+      setFollowerList(currenList => {
+        const newList = [...currenList, ...list];
+        return newList;
+      });
+      // setFollowerList(list)
+    }
+  };
   return (
     <div className="App">
-      <Detail data={detail}/>
       <Search searchedUsername={searchedUsername} />
-      <FollowerList data={followerList} />
-      <FollowingList data={followingList} />
-      <RepoList data={repoList} />
+      <Detail
+        data={detail}
+        visibleComponent={visibleComponent}
+        changeVisibleComponent={setVisibleComponent}
+      />
+      {visibleComponent === 1 ? (
+        <FollowerList data={followerList} />
+      ) : visibleComponent === 2 ? (
+        <FollowingList data={followingList} />
+      ) : (
+        <RepoList data={repoList} />
+      )}
+      <button onClick={loadMoreData}>Load More</button>
     </div>
   );
 }
@@ -85,3 +109,5 @@ function App() {
 export default App;
 
 // named export vs default export
+
+// visible component : 1: repos,2: followers,3:following

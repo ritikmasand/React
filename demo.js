@@ -34,3 +34,20 @@
 
 // prototpye
 // call apply bind
+
+
+// const jsonstring= '{"name": "rajat","age": 30,"city": "Mumbai"}';
+// // const newString= JSON.parse(jsonstring); //Comment this out
+
+// console.log(jsonstring.name); //output is undefined, why?
+
+
+const circle = {
+  radius: 20,
+  diameter() {
+    return this.radius * 2;
+  },
+  perimeter: () => 2 * Math.PI * 'ritik',
+};
+console.log(circle.diameter());
+console.log(circle.perimeter());
