@@ -15,6 +15,8 @@ function Detail({ data, changeVisibleComponent, visibleComponent }) {
         <button
           onClick={() => {
             changeVisibleComponent(1);
+            console.log(visibleComponent);
+            // console.log('ht');
           }}
         >
           {data.followers} <span>Followers</span>
@@ -22,6 +24,7 @@ function Detail({ data, changeVisibleComponent, visibleComponent }) {
         <button
           onClick={() => {
             changeVisibleComponent(3);
+            console.log(visibleComponent);
           }}
         >
           {data.public_repos} <span>Repos</span>
@@ -29,6 +32,8 @@ function Detail({ data, changeVisibleComponent, visibleComponent }) {
         <button
           onClick={() => {
             changeVisibleComponent(2);
+            console.log(visibleComponent);
+            // console.log('btn');
           }}
         >
           {data.following} <span>following</span>
