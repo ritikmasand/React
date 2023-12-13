@@ -30,24 +30,33 @@
 // arrow -- this keyword ❌
 // traditionals functions (this) . ✅
 
-
-
 // prototpye
 // call apply bind
-
 
 // const jsonstring= '{"name": "rajat","age": 30,"city": "Mumbai"}';
 // // const newString= JSON.parse(jsonstring); //Comment this out
 
 // console.log(jsonstring.name); //output is undefined, why?
 
+// const circle = {
+//   radius: 20,
+//   diameter() {
+//     return this.radius * 2;
+//   },
+//   perimeter: () => 2 * Math.PI * 'ritik',
+// };
+// console.log(circle.diameter());
+// console.log(circle.perimeter());
 
-const circle = {
-  radius: 20,
-  diameter() {
-    return this.radius * 2;
-  },
-  perimeter: () => 2 * Math.PI * 'ritik',
-};
-console.log(circle.diameter());
-console.log(circle.perimeter());
+async function fn() {
+  const response = await fetch("https://jsonplaceholder.typicode.com/users");
+  const data = await response.json();
+  console.log(data);
+  let html = '';
+  data.map((e)=>{
+    return (
+      p.innerHTML = 
+    )
+  })
+}
+fn();

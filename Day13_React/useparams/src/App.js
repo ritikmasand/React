@@ -1,18 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-import { Route , Routes } from 'react-router-dom';
-import Home from './component/Home';
+import React from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Routes>
-          <Route path="/" element={<h2>Homepage...</h2>} />
-          <Route path='/data/:key1' element={<Home/>}/>
-        </Routes>
-      </header>
-    </div>
-  );
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    axios
+      .get("https://jsonplaceholder.typicode.com/users")
+      .then((res) => setUsers(res.data))
+      .catch((err) => console.log(err));
+  }, []);
+
+  return <div>{users && users.map((user) => <div>{user.name}</div>)}</div>;
 }
 
 export default App;

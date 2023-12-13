@@ -17,7 +17,7 @@ function App() {
   // const []
   const searchedUsername = (keyword) => {
     setUsername(keyword);
-  };
+  };  // jugaad /  
 
   // 1 -> detail of username
   // 2-> repos
@@ -91,8 +91,8 @@ function App() {
 
   const loadMoreData = async () => {
     if (visibleComponent === 2) {
-      const currentPages = Math.ceil(followingList.length / 30);
-      const nextpage = currentPages + 1;
+      const currentPages = Math.ceil(followingList.length / 30); // 1
+      const nextpage = currentPages + 1; //2 
       const response = await github.get(
         `/${username}/following?page=${nextpage}`
       );
@@ -117,8 +117,8 @@ function App() {
         return newList;
       });
     } else {
-      const currentPages = Math.ceil(repoList.length / 30);
-      const nextPage = currentPages + 1;
+      const currentPages = Math.ceil(repoList.length / 30);  //1
+      const nextPage = currentPages + 1; //2
       const response = await github.get(`/${username}/repos?page=${nextPage}`);
       const list = response.data;
 
