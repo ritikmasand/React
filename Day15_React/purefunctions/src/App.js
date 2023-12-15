@@ -1,9 +1,4 @@
-import logo from "./logo.svg";
 import "./App.css";
-import ChildComponent from "./ChildComponent";
-import { useState } from "react";
-import ChildD from "./components/ChildD";
-import ChildC from "./components/ChildC";
 import ChildA from "./components/ChildA";
 function App() {
   // const [receivedata, setreceivedata] = useState(null);
