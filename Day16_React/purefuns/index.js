@@ -78,7 +78,8 @@
 
 // console.log(fn());
 
-// Q
+// This is not a pure function
+// Q 1 :
 // const fn3 = () => {
 //   const today = new Date();
 //   return today.getTime();
@@ -87,36 +88,48 @@
 // console.log(fn3());
 // console.log(fn3());
 
-console.log("This is a log message");
+// console.log("This is a log message");
 
-console.error("This is a error message");
+// console.error("This is a error message");
 
-console.warn("This is a warn message");
+// console.warn("This is a warn message");
 
-const arr = ["Imran", "Ritik", "Thoukeer", "Rajat", "Varuna"];
+// const arr = ["Imran", "Ritik", "Thoukeer", "Rajat", "Varuna"];
 
-console.log(arr);
+// console.log(arr);
 
-console.table(arr);
+// console.table(arr);
 
-const obj = {
-  fname: "ABCD",
-  lname: "EFGH",
-  phone: "+9134234",
-};
+// const obj = {
+//   fname: "ABCD",
+//   lname: "EFGH",
+//   phone: "+9134234",
+// };
 
-// console.table(obj);
+// // console.table(obj);
+
+// console.dir(obj)
+
+// console.count();
+// console.count();
+// console.count();
+// console.count();
+// console.count();
+// console.count();
+
+// console.log("%cStop %cHere", "color:red;font-size:5rem;color:yellow");
+
+// const fn4 = (arr1, arr2) => {
+//   arr1 = arr1.concat(arr2); // this is equivalent to creating a deep copy with the concatenation
+//   console.log(arr1);
+// };
+
+// // arr1 = [1,2,3,4,5,6,7,8]
+// const first = [1, 2, 3, 4, 5];
+// const second = [5, 6, 7, 8];
 
 
-console.dir(obj)
-
-
-
-console.count();
-console.count();
-console.count();
-console.count();
-console.count();
-console.count();
-
-console.log("%cStop %cHere", "color:red;font-size:5rem;color:yellow");
+// fn4(first, second);
+// fn4(first, second);
+// fn4(first, second);
+// fn4(first, second);

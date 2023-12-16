@@ -13,6 +13,12 @@
 - There can not be 100% purity in the code , but as much as possible , we would want .
 - Any function which does not follow 1 or more of the things is considered to be an impure function .
 
-## Types of consoles :
 
+## Pure components 
+- if the same set of conditions are followed by the components, then they are considered to be pure components 
+- if any one of them breaks the condition , then they are condidered to be not pure (impure)
+
+
+
+## Types of consoles :
 console.log('This is a log message')
