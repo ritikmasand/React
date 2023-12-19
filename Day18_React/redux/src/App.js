@@ -1,22 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-
+import logo from "./logo.svg";
+import "./App.css";
+import { setValue } from "./slice";
+import { useDispatch } from "react-redux";
+import ChildA from "./components/ChildA";
 function App() {
+  const dispatch = useDispatch();
+  const dataChanged = (e) => {
+    const data = e.target.value;
+    console.log(data);
+    dispatch(setValue(data));
+  };
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <input type="text" onKeyUp={dataChanged} />
+        <ChildA/>
       </header>
     </div>
   );
