@@ -21,3 +21,12 @@ function App() {
 }
 
 export default App;
+
+
+
+// usecallback and  usememo
+// lifecycle : unmounting . 
+// useinternet hook 
+// lazy loading
+// controlled and uncontrolled
+// event bubbling
