@@ -48,7 +48,7 @@ export default App;
 
 
 // controlled and uncontrolled componets
-// internet is connected ? 
+// internet is connected hook? 
 // unmounting phase 
 
 // IMDB  : Project
