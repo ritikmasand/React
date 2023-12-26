@@ -24,3 +24,9 @@ const useInernetStatus = () => {
 };
 
 export default useInernetStatus
+
+// cinemagics  ✅
+// cinepedia   ✅
+// cinehub    
+// cinemtatics 🙅‍♀️ 
+// movie mania
