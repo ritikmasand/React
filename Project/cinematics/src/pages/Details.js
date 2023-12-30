@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { omdb } from "../utils";
 import { Box, Chip, Stack, Typography } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
@@ -22,20 +22,21 @@ function Details() {
       setFavorite(true);
     } else setFavorite(false);
   }, [favourites, id]);
-
+  
+  const navigate = useNavigate();
   useEffect(() => {
     (async () => {
       const response = await omdb.get(`?i=${id}&plot=full`);
       setData(response.data);
     })();
-  }, [id]);
+  }, [id, navigate]);
 
   useEffect(() => {
-    if (data.Country?.length > 0 ) {
+    if (data.Country?.length > 0) {
       (async () => {
         const response = await axios.get(
           `https://restcountries.com/v3.1/name/${
-            data.Country.split(', ')[0]
+            data.Country.split(", ")[0]
           }?fullText=true`
         );
         setFlag(response.data[0]?.flags?.svg);
@@ -89,17 +90,15 @@ function Details() {
             <Stack mt={5} alignItems="center">
               {flag ? <img src={flag} height={40} alt="flag" /> : false}
             </Stack>
-            <Typography variant="overline">
-              {data.Country}
-            </Typography>
+            <Typography variant="overline">{data.Country}</Typography>
           </box>
         </stack>
         <Typography variant="h4" mt={5} mb={5}>
-          Plot : 
+          Plot :
         </Typography>
-      <Typography variant="h5" align="center">
-        {data.Plot}
-      </Typography>
+        <Typography variant="h5" align="center">
+          {data.Plot}
+        </Typography>
       </Stack>
     </Box>
   );
